@@ -1,4 +1,4 @@
-# EdelweissCatalogFilter
+# Edelweiss Catalog Filter
 
 Filters out old catalogs from the list in the `Orders > Edit > Advanced` pop-up page
 
