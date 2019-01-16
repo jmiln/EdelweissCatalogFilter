@@ -1,0 +1,36 @@
+{
+    "manifest_version": 2,
+    "name": "Edelweiss Catalog Shortener",
+    "version": "2.0",
+
+    "description": "Filters out old catalogs from the list under orders.",
+
+    "permissions": [
+        "activeTab",
+        "storage"
+    ],
+    
+    "applications": {
+        "gecko": {
+            "id": "{9757e200-a53d-4e01-a672-b0ca60aeb2b3}"
+        }
+    },
+    "options_ui": {
+        "page": "options.html",
+        "browser_style": true
+    },
+
+    "page_action": {
+        "browser_style": true,
+        "default_icon": {
+            "19": "icons/books1x.png",
+            "38": "icons/books2x.png"
+        },
+        "default_title": "Filter Catalogs",
+        "show_matches": ["*://*.edelweiss.plus/*"]
+    },
+    
+    "background": {
+        "scripts": ["background.js"]
+    }
+}
