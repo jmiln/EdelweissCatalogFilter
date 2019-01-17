@@ -7,9 +7,7 @@ defaultRegex = [
     "(Sp|S|F|FL|W)(0[0-9]|1[0-7])"
 ];
 
-function saveOptions(e) {
-    e.preventDefault();
-    
+function saveOptions() {    
     regex = document.querySelector("#regex").value;
     if (regex && regex.length) {
         regex = regex.split("\n");
@@ -34,5 +32,21 @@ function restoreOptions() {
     var getting = browser.storage.sync.get("regex");
     getting.then(setCurrentChoice, onError);
 }
+
+function resetDefault() {
+    if (confirm('Are you sure you want reset this?\nThis will remove any changes you\'ve made.')) {
+        document.getElementById("regex").value = defaultRegex.join("\n");
+        // document.querySelector("#regex").value = defaultRegex.join("\n");
+    }
+}
+
+// Button to reset the regex to the default based on defaultRegex at the top of this file
+resetButton = document.getElementById("resetDefault");
+resetButton.addEventListener("click", resetDefault);
+
+// Save button to save the regex 
+saveButton = document.getElementById("saveRegex")
+saveButton.addEventListener("click", saveOptions);
+
+// Restore whatever saved regex is there when the page is loaded
 document.addEventListener("DOMContentLoaded", restoreOptions);
-document.querySelector("form").addEventListener("submit", saveOptions);
