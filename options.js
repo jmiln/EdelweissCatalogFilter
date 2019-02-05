@@ -2,9 +2,14 @@ defaultRegex = [
     "// Anything with a date between 2000 and 2017",
     "201[0-7]",
     "200[0-9]",
+    "",
     "// Any catalog from Spring/ Summer/ Fall/ Winter 00 to 17",
     "(Spring|Summer|Fall|Winter)(0[0-9]|1[0-7])",
-    "(Sp|S|F|FL|W)(0[0-9]|1[0-7])"
+    "(Sp|S|F|FL|W)(0[0-9]|1[0-7])",
+    "",
+    "// Clear out all the earlier 2018 stuff",
+    "(Spring|Summer|Fall)(2018|18)",
+    "(Sp|S|F|FL)(2018|18)"
 ];
 
 function saveOptions() {    
@@ -22,7 +27,7 @@ function saveOptions() {
 function restoreOptions() {
     function setCurrentChoice(result) {
         // If it's got some stored, then use that. Else use the default
-        document.querySelector("#regex").value = result.regex ? result.regex.join("\n") : defaultRegex.join("\n");
+        document.getElementById("regex").value = result.regex ? result.regex.join("\n") : defaultRegex.join("\n");
     }
 
     function onError(error) {
@@ -36,7 +41,6 @@ function restoreOptions() {
 function resetDefault() {
     if (confirm('Are you sure you want reset this?\nThis will remove any changes you\'ve made.')) {
         document.getElementById("regex").value = defaultRegex.join("\n");
-        // document.querySelector("#regex").value = defaultRegex.join("\n");
     }
 }
 

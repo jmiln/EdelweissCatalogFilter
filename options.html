@@ -6,20 +6,23 @@
     </head>
 
     <body>
-      <strong>String regex (One string per line, comments starting with "//" will be ignored)</strong>
-      </br>
-      <textarea id="regex" form="regexForm" rows="6" cols="65">
-// Anything with a date between 2000 and 2017
-201[0-7]
-200[0-9]
-
-// Any catalog from Spring/ Summer/ Fall/ Winter 00 to 17
-(Spring|Summer|Fall|Winter)(0[0-9]|1[0-7])
-(Sp|S|F|FL|W)(0[0-9]|1[0-7])      
-        </textarea></br>
-        
-        <button id="resetDefault">Reset to Default</button>
-        <button id="saveRegex">Save</button>
-        <script src="options.js"></script>
+        <div id="filter" align="center">
+            </br>
+            <textarea id="regex" form="regexForm" rows="15" cols="65" placeholder="Strings/ text/ regex here"></textarea>
+            </br>
+            
+            <button id="resetDefault">Reset to Default</button>
+            <button id="saveRegex">Save</button>
+            <script src="options.js"></script>
+        </div>
+        <table id="notes" align="center">
+            <td><strong>
+                <ul>
+                    <li>Each line is considered a different filter</li>
+                    <li>It does support regular expressions (As shown by the default filters)</li>
+                    <li>Lines starting with 2 forward slashes "//" will be ignored, and can be used as notes</li>
+                </ul></strong>
+            </td>
+        </table>
     </body>
 </html>

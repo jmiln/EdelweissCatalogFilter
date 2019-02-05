@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Edelweiss Catalog Shortener",
-    "version": "2.2",
+    "version": "2.3",
 
     "description": "Filters out old catalogs from the list under orders.",
 
@@ -28,10 +28,7 @@
             "38": "icons/books2x.png"
         },
         "default_title": "Filter Catalogs",
-        "show_matches": ["*://*.edelweiss.plus/*"]
-    },
-    
-    "background": {
-        "scripts": ["background.js"]
+        "show_matches": ["*://*.edelweiss.plus/*"],
+        "default_popup": "popup/popup.html"        
     }
 }
