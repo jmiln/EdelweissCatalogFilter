@@ -1,5 +1,6 @@
-# Edelweiss Catalog Filter
+# Edelweiss Utils
 
+## Filter Cats
 Filters out old catalogs from the list in the `Orders > Edit > Advanced` pop-up page
 
 The defaults for the filters are just set to filter out anything that's got a date from 2000-2017, assuming that those are not needed anymore.
@@ -15,3 +16,10 @@ Default filters are :
 (Spring|Summer|Fall|Winter)(0[0-9]|1[0-7])
 (Sp|S|F|FL|W)(0[0-9]|1[0-7])
 ```
+
+## Search Cats
+Filter the above lists to show only ones matching a given string with `Search Cats`
+
+## Change Tags
+Changes the tags/ notes/ reviews so the number and title are copyable. 
+This works under any catalogs that have any of those.
