@@ -2,14 +2,22 @@ function filter() {
     browser.tabs.executeScript({file: "../filterCats.js"});
 }
 
+function search() {
+    browser.tabs.executeScript({file: "../searchCats.js"});
+}
+
 function tagView() {
     browser.tabs.executeScript({file: "../tagView.js"});
 }
 
-// Button to reset the regex to the default based on defaultRegex at the top of this file
+// Button to filter the catalogs based on the saved filters
 filterCatButton = document.getElementById("filterCats");
 filterCatButton.addEventListener("click", filter);
 
-// Save button to save the regex 
-textifyButton = document.getElementById("textifyButton")
+// Button to filter the catalogs to only show the one(s) you search for
+filterCatButton = document.getElementById("searchCats");
+filterCatButton.addEventListener("click", search);
+
+// Button to change the tags/ notes/ reviews to show in a textArea, so they can be copied
+textifyButton = document.getElementById("textifyButton");
 textifyButton.addEventListener("click", tagView);

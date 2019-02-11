@@ -39,7 +39,7 @@ function restoreOptions() {
 }
 
 function resetDefault() {
-    if (confirm('Are you sure you want reset this?\nThis will remove any changes you\'ve made.')) {
+    if (confirm('Are you sure you want to reset this?\nThis will remove any changes you\'ve made.')) {
         document.getElementById("regex").value = defaultRegex.join("\n");
     }
 }
