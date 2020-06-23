@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name": "Edelweiss Catalog Shortener",
+    "name": "Edelweiss Utils",
     "version": "2.4",
 
     "description": "Filters out old catalogs from the list under orders.",
@@ -20,7 +20,6 @@
         "browser_style": true,
         "open_in_tab": true
     },
-
     "page_action": {
         "browser_style": true,
         "default_icon": {

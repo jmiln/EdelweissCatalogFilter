@@ -4,6 +4,9 @@ function filterCats() {
         alert("No list found, make sure you have the list of catalogs up.");
     } else {
         var searchStr = prompt("What are you looking for?");
+        
+        // Try using this for easier checks?
+        // https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
 
         // Load all the options
         opts = document.getElementById("catalogSelect").options;

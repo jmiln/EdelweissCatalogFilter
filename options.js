@@ -4,12 +4,8 @@ defaultRegex = [
     "200[0-9]",
     "",
     "// Any catalog from Spring/ Summer/ Fall/ Winter 00 to 17",
-    "(Spring|Summer|Fall|Winter)(0[0-9]|1[0-7])",
-    "(Sp|S|F|FL|W)(0[0-9]|1[0-7])",
-    "",
-    "// Clear out all the earlier 2018 stuff",
-    "(Spring|Summer|Fall)(2018|18)",
-    "(Sp|S|F|FL)(2018|18)"
+    "(Spring|Summer|Fall|Winter)(0[0-9]|1[0-8])",
+    "(Sp|S|F|FL|W)(0[0-9]|1[0-8])"
 ];
 
 function saveOptions() {    
