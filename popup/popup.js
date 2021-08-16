@@ -14,6 +14,10 @@ function getIsbns() {
     browser.tabs.executeScript({file: "../scripts/getIsbns.js"});
 }
 
+function getTitleInfo() {
+    browser.tabs.executeScript({file: "../scripts/getTitleListInfo.js"});
+}
+
 // Button to filter the catalogs based on the saved filters
 filterCatButton = document.getElementById("filterCats");
 filterCatButton.addEventListener("click", filter);
@@ -28,3 +32,6 @@ textifyButton.addEventListener("click", tagView);
 
 isbnsButton = document.getElementById("isbnsButton");
 isbnsButton.addEventListener("click", getIsbns);
+
+titleGrabButton = document.getElementById("titleGrabButton");
+titleGrabButton.addEventListener("click", getTitleInfo);

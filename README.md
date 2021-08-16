@@ -26,3 +26,8 @@ This works under any catalogs that have any of those.
 
 ## Get ISBNs
 Grabs the ISBNs from the list of books based on the `pve_sku` html class
+
+## Get Title Info
+Puts all the info from a list of books into an alert where it can be copied easily
+
+* The list needs to be in the condensed mode

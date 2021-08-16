@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Edelweiss Utils",
-    "version": "2.5",
+    "version": "2.7",
 
     "description": "Various utilities to help make using Edelweiss easier.",
 
@@ -24,8 +24,8 @@
     "page_action": {
         "browser_style": true,
         "default_icon": {
-            "19": "icons/books1x.png",
-            "38": "icons/books2x.png"
+            "18": "icons/books1x.png",
+            "36": "icons/books2x.png"
         },
         "default_title": "Filter Catalogs",
         "show_matches": ["*://*.edelweiss.plus/*"],
