@@ -30,7 +30,7 @@ const popupHtml = document.getElementById("popup-content");
 for (const file of files) {
     thisButton = document.createElement("div");
     thisButton.type = "button";
-    thisButton.innerHTML = file.buttonText;
+    thisButton.textContent = file.buttonText;
     thisButton.className = "button";
     if (file.description) {
         thisButton.title = file.description;
