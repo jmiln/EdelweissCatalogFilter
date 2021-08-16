@@ -1,25 +1,21 @@
-function filterCats() {
+function filterCats(filters) {
     // Make sure the list is available before trying to mess with it
     if (!document.getElementById("catalogSelect")) {
         alert("No list found, make sure you have the list of catalogs up.");
     } else {
-        var searchStr = prompt("What are you looking for?");
-        
-        // Try using this for easier checks?
-        // https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
-
         // Load all the options
         opts = document.getElementById("catalogSelect").options;
         oldLen = opts.length;
         
-        // Make sure there is a string to look for
-        if (!searchStr || !searchStr.length) {
-            return alert("No search string entered.");
+        // Make sure there is at least one string to filter on
+        if (!filters || !filters.length) {
+            return alert("No filters loaded to shorten list.\nMake sure you have something in the settings to filter.");
         }
 
         // Filter out all the lists we don't want (Test it with & without extra symbols)
         newOpts = Object.keys(opts).filter(o => 
-            opts[o].innerHTML.toLowerCase().replace(/[\W_]+/g, "").includes(searchStr.replace(/[\W_]+/g, ""))
+            !(new RegExp(filters.join("|"), "gi").test(opts[o].innerHTML.replace(/[\W_]+/g, ""))) &&
+            !(new RegExp(filters.join("|"), "gi").test(opts[o].innerHTML))
         ).map(o => opts[o]);
         
         // Load up all the ones we want to show, then save em back 
@@ -33,8 +29,21 @@ function filterCats() {
              
             catSelect.appendChild(option);
         }
-        return alert("List shortened from " + oldLen + " to " + newOpts.length);
+        alert("List shortened from " + oldLen + " to " + newOpts.length);
     }
 }
 
-filterCats();
+function onError(error) {
+    console.log(`Error: ${error}`);
+}
+
+function onGot(item) {
+    var regex = [];
+    if (item.regex) {
+        regex = item.regex.filter(r => r.trim().length && !r.trim().startsWith("//")).map(r => r.trim());
+    }
+    filterCats(regex);
+}
+
+var getting = browser.storage.sync.get("regex");
+getting.then(onGot, onError);

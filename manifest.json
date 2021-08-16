@@ -1,9 +1,9 @@
 {
     "manifest_version": 2,
     "name": "Edelweiss Utils",
-    "version": "2.4",
+    "version": "2.5",
 
-    "description": "Filters out old catalogs from the list under orders.",
+    "description": "Various utilities to help make using Edelweiss easier.",
 
     "permissions": [
         "activeTab",
@@ -20,6 +20,7 @@
         "browser_style": true,
         "open_in_tab": true
     },
+
     "page_action": {
         "browser_style": true,
         "default_icon": {

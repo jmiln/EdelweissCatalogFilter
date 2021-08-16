@@ -23,3 +23,6 @@ Filter the above lists to show only ones matching a given string with `Search Ca
 ## Change Tags
 Changes the tags/ notes/ reviews so the number and title are copyable. 
 This works under any catalogs that have any of those.
+
+## Get ISBNs
+Grabs the ISBNs from the list of books based on the `pve_sku` html class

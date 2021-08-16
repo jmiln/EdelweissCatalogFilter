@@ -1,13 +1,17 @@
 function filter() {
-    browser.tabs.executeScript({file: "../filterCats.js"});
+    browser.tabs.executeScript({file: "../scripts/filterCats.js"});
 }
 
 function search() {
-    browser.tabs.executeScript({file: "../searchCats.js"});
+    browser.tabs.executeScript({file: "../scripts/searchCats.js"});
 }
 
 function tagView() {
-    browser.tabs.executeScript({file: "../tagView.js"});
+    browser.tabs.executeScript({file: "../scripts/tagView.js"});
+}
+
+function getIsbns() {
+    browser.tabs.executeScript({file: "../scripts/getIsbns.js"});
 }
 
 // Button to filter the catalogs based on the saved filters
@@ -21,3 +25,6 @@ filterCatButton.addEventListener("click", search);
 // Button to change the tags/ notes/ reviews to show in a textArea, so they can be copied
 textifyButton = document.getElementById("textifyButton");
 textifyButton.addEventListener("click", tagView);
+
+isbnsButton = document.getElementById("isbnsButton");
+isbnsButton.addEventListener("click", getIsbns);
