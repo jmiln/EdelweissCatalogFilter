@@ -1,23 +1,28 @@
 const files = [
     {
         fileName: "filterCats",
-        buttonText: "Filter Cats"
+        buttonText: "Filter Cats",
+        description: "Filter the categories available for you to choose from"
     },
     {
         fileName: "searchCats",
-        buttonText: "Search Cats"
+        buttonText: "Search Cats",
+        description: "Search within the categories for something specific"
     },
     {
         fileName: "tagView",
-        buttonText: "Change Tags"
+        buttonText: "Change Tags",
+        description: "When checking the notes & tags (The little pencil button), this will make it so it's able to be copied"
     },
     {
         fileName: "getIsbns",
-        buttonText: "Get ISBNs"
+        buttonText: "Get ISBNs",
+        description: "Grabs the ISBNs and makes them able to be copied easily"
     },
     {
         fileName: "getTitleListInfo",
-        buttonText: "Get Book Info"
+        buttonText: "Get Book Info",
+        description: "Grabs the book info (Title, author, publisher, date, price...) and makes them easier to copy"
     }
 ]
 const popupHtml = document.getElementById("popup-content");
@@ -27,6 +32,9 @@ for (const file of files) {
     thisButton.type = "button";
     thisButton.innerHTML = file.buttonText;
     thisButton.className = "button";
+    if (file.description) {
+        thisButton.title = file.description;
+    }
     thisButton.addEventListener("click", () => {
         browser.tabs.executeScript({file: `../scripts/${file.fileName}.js`});
     });
